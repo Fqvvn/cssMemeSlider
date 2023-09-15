@@ -3,14 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <link rel="stylesheet" type="text/css" href="normalize.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
     <title>CssMemeSlider</title>
 </head>
 <body>
     <main>
-        <section>
-            <h2>Секция 1</h2>
-            <p>Текст вашей секции 1.</p>
-        </section>
+        <div class="slider">
+            <div class="images">
+                <section class="first">
+                    <img src="" alt="first meme"></img>
+                    <h2>first text</h2>
+                </section>
+                <section class="second">
+                    <img src="" alt="second meme"></img>
+                    <h2>second text</h2>
+                </section>
+                <section class="third">
+                    <img src="" alt="third meme"></img>
+                    <h2>third text</h2>
+                </section>
+                <section class="fourth">
+                    <img src="" alt="fourth meme"></img>
+                    <h2>fourth text</h2>
+                </section>
+            </div>
+            <div class="inputs">
+                <input type="radio" name="slider" id="switch1" checked>
+                <input type="radio" name="slider" id="switch2">
+                <input type="radio" name="slider" id="switch3">
+                <input type="radio" name="slider" id="switch4">
+            </div>
+        </div>
     </main>
+    <script src="index.js"></script>
 </body>
 </html>

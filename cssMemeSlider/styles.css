@@ -1,0 +1,27 @@
+body,main {
+    background-color: #25282a;
+    color: white;
+}
+.slider {
+    margin: 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    overflow: hidden;
+    width: 90%;
+}
+.images {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+h2 {
+    margin-top: 15px;
+}
+img {
+    border-radius: 50%;
+    border: 2px solid transparent;
+}
+.first, .second, .third, .fourth {
+    width:100%;
+}
