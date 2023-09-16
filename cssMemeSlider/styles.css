@@ -40,6 +40,39 @@ img {
 .inputs {
     margin-right: 0;
     align-self: flex-end;
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+}
+input[type="radio"] {
+    margin: 0;
+    padding: 0;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    appearance: none;
+    display: grid;
+    place-content: center;
+}
+#switch1::before, #switch2::before, #switch3::before, #switch4::before {
+    content: '';
+    display: inline-block;
+    border: 5px solid #71abff;
+    border-radius: 50%;
+}
+#switch1:checked::before, #switch2:checked::before, #switch3:checked::before, #switch4:checked::before {
+    width: 8px;
+    height: 8px;
+    border: 1px solid #71abff;
+    border-radius: 50%;
+}
+#switch1:hover::before, #switch2:hover::before, #switch3:hover::before, #switch4:hover::before {
+    border: 5px solid white;
+    border-radius: 50%;
+}
+#switch1:checked:hover::before, #switch2:checked:hover::before, #switch3:checked:hover::before, #switch4:checked:hover::before {
+    border: 1px solid white;
+    border-radius: 50%;
 }
 .text {
     margin-top: -45px;
