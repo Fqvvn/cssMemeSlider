@@ -2,23 +2,29 @@ body,main {
     background-color: #25282a;
     color: white;
     scroll-behavior: smooth;
+    overflow: hidden;
+}
+.container {
+    display: grid;
+    grid-template-columns: 5% 1fr 5%;
+    grid-template-rows: 5% 1fr 5%;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px; 
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
 }
 .slider {
+    grid-area: 2 / 2 / 3 / 3;
     display: grid;
     grid-template-columns: 75% 1fr repeat(4, 1.25em);
-    grid-template-rows: 90% 1.25em 1fr;
-    grid-row-gap: 0px;
+    grid-template-rows: 80% repeat(2, 1.25em) 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px; 
     overflow: hidden;
-    width: 90%;
-    height: 90vh;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 .images {
-    grid-row: 1;
-    grid-column: span 6;
+    grid-area: 1 / 1 / 2 / 7;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -55,20 +61,16 @@ input[type="radio"] {
     margin-right: 0;
 }
 #switch1 {
-    grid-row: 3;
-    grid-column: 3;
+    grid-area: 3 / 3 / 4 / 4;
 }
 #switch2 {
-    grid-row: 3;
-    grid-column: 4;
+    grid-area: 3 / 4 / 4 / 5;
 }
 #switch3 {
-    grid-row: 3;
-    grid-column: 5;
+    grid-area: 3 / 5 / 4 / 6;
 }
 #switch4 {
-    grid-row: 3;
-    grid-column: 6;
+    grid-area: 3 / 6 / 4 / 7; 
 }
 #switch1::before, #switch2::before, #switch3::before, #switch4::before {
     content: '';
@@ -91,8 +93,7 @@ input[type="radio"] {
     border-radius: 50%;
 }
 .text {
-    grid-row: 3 / 5;
-    grid-column: 1;
+    grid-area: 3 / 1 / 5 / 2; 
     overflow-x: hidden;
 }
 .first-text, .second-text, .third-text, .fourth-text {
@@ -125,15 +126,17 @@ input[type="radio"] {
 @media (max-width: 895px) {
     body {
         background-color: white;
+        display: grid;
+        grid-template-columns: 5% 1fr 5%;
+        grid-template-rows: 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px; 
     }
     .container { 
         background-color:#25282a;
-        width: 90%;
-        height: 100%;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        grid-row: 1;
+        grid-column: 2;
+        width: 100%;
     }
     .slider {
         display: grid;
