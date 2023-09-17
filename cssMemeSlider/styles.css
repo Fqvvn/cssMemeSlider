@@ -8,7 +8,7 @@ body,main {
     grid-template-columns: 75% 1fr 20px 20px 20px 20px;
     grid-template-rows: 90% 20px 20px 1fr;
     overflow: hidden;
-    width: 90vw;
+    width: 90%;
     height: 90vh;
     position: absolute;
     top: 50%;
@@ -38,8 +38,9 @@ body,main {
 }
 img {
     margin: auto;
-    height: 100%; 
-    object-fit: cover; 
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
 }
 input[type="radio"] {
     margin: 0;
@@ -120,9 +121,42 @@ input[type="radio"] {
     flex-wrap: nowrap;
     gap: 1px;
 }
-@media (max-width: 1063px) {
-    img {
-        width: 100%;
-        height: auto;
+@media (max-width: 895px) {
+    body {
+        background-color: white;
+    }
+    .container { 
+        background-color:#25282a;
+        width: 90%;
+        height: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .slider {
+        display: grid;
+        grid-template-columns: 1fr repeat(4, 20px) 1fr;
+        grid-template-rows: 90% 20px 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 20px; 
+    }
+    .images {
+        grid-area: 1 / 1 / 2 / 7;
+    }
+    #switch1 {
+        grid-area: 2 / 2 / 3 / 3;
+    }
+    #switch2 {
+        grid-area: 2 / 3 / 3 / 4;
+    }
+    #switch3 {
+        grid-area: 2 / 4 / 3 / 5;
+    }
+    #switch4 {
+        grid-area: 2 / 5 / 3 / 6; 
+    }
+    .text {
+        grid-area: 3 / 1 / 4 / 7;
     }
 }
