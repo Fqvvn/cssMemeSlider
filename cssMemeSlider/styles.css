@@ -38,7 +38,7 @@ body,main {
 }
 img {
     margin: auto;
-    height: 100%;
+    height: 90%;
 }
 input[type="radio"] {
     margin: 0;
@@ -88,23 +88,34 @@ input[type="radio"] {
     border-radius: 50%;
 }
 .text {
-    grid-row: 3/4;
+    grid-row: 3 / 5;
     grid-column: 1;
-    display: flex;
-    flex-direction: row;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 .first-text, .second-text, .third-text, .fourth-text {
     min-width: 100%;
 }
-#switch2 ~ .images {
-    animation: slide-next .5s;
+#switch1:checked ~ .images, #switch1:checked ~ .text > .text-container{
+    transform: translateX(0);
+    transition: .5s;
+
 }
-@keyframes slide-next {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-80%);
-    }
+#switch2:checked ~ .images, #switch2:checked ~ .text > .text-container {
+    transform: translateX(-100%);
+    transition: .5s;
+}
+#switch3:checked ~ .images, #switch3:checked ~ .text > .text-container {
+    transform: translateX(-200%);
+    transition: .5s;
+}
+#switch4:checked ~ .images, #switch4:checked ~ .text > .text-container {
+    transform: translateX(-300%);
+    transition: .5s;
+}
+.text-container {
+    min-width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 1px;
 }
