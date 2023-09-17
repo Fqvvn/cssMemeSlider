@@ -148,16 +148,16 @@ input[type="radio"] {
     .images {
         grid-area: 1 / 1 / 2 / 7;
     }
-    #switch1 {
+    #switch1, #custom1 {
         grid-area: 2 / 2 / 3 / 3;
     }
-    #switch2 {
+    #switch2, #custom2 {
         grid-area: 2 / 3 / 3 / 4;
     }
-    #switch3 {
+    #switch3, #custom3 {
         grid-area: 2 / 4 / 3 / 5;
     }
-    #switch4 {
+    #switch4, #custom4 {
         grid-area: 2 / 5 / 3 / 6; 
     }
     .text {
