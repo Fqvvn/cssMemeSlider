@@ -60,35 +60,35 @@ input[type="radio"] {
     place-content: center;
     margin-right: 0;
 }
-#switch1 {
+#switch1, #custom1 {
     grid-area: 3 / 3 / 4 / 4;
 }
-#switch2 {
+#switch2, #custom2 {
     grid-area: 3 / 4 / 4 / 5;
 }
-#switch3 {
+#switch3, #custom3 {
     grid-area: 3 / 5 / 4 / 6;
 }
-#switch4 {
+#switch4, #custom4 {
     grid-area: 3 / 6 / 4 / 7; 
 }
-#switch1::before, #switch2::before, #switch3::before, #switch4::before {
-    content: '';
+.custom {
     display: inline-block;
     border: 0.3125em solid #71abff;
     border-radius: 50%;
+    place-self: center;
 }
-#switch1:checked::before, #switch2:checked::before, #switch3:checked::before, #switch4:checked::before {
+#switch1:checked ~ #custom1, #switch2:checked ~ #custom2, #switch3:checked ~ #custom3, #switch4:checked ~ #custom4 {
     width: 0.5em;
     height: 0.5em;
     border: 0.0625em solid #71abff;
     border-radius: 50%;
 }
-#switch1:hover::before, #switch2:hover::before, #switch3:hover::before, #switch4:hover::before {
+#switch1:hover ~ #custom1, #switch2:hover ~ #custom2, #switch3:hover ~ #custom3, #switch4:hover ~ #custom4 {
     border: 0.3125em solid white;
     border-radius: 50%;
 }
-#switch1:checked:hover::before, #switch2:checked:hover::before, #switch3:checked:hover::before, #switch4:checked:hover::before {
+#switch1:checked:hover ~ #custom1, #switch2:checked:hover ~ #custom2, #switch3:checked:hover ~ #custom3, #switch4:checked:hover ~ #custom4 {
     border: 0.0625em solid white;
     border-radius: 50%;
 }
