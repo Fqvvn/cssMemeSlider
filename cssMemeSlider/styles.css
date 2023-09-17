@@ -38,7 +38,8 @@ body,main {
 }
 img {
     margin: auto;
-    height: 90%;
+    height: 100%; 
+    object-fit: cover; 
 }
 input[type="radio"] {
     margin: 0;
@@ -118,4 +119,10 @@ input[type="radio"] {
     flex-direction: row;
     flex-wrap: nowrap;
     gap: 1px;
+}
+@media (max-width: 1063px) {
+    img {
+        width: 100%;
+        height: auto;
+    }
 }
