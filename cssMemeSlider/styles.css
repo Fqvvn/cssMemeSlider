@@ -4,9 +4,10 @@ body,main {
     scroll-behavior: smooth;
 }
 .slider {
-    display: grid; 
-    grid-template-columns: 75% 1fr 20px 20px 20px 20px;
-    grid-template-rows: 90% 20px 20px 1fr;
+    display: grid;
+    grid-template-columns: 75% 1fr repeat(4, 1.25em);
+    grid-template-rows: 90% 1.25em 1fr;
+    grid-row-gap: 0px;
     overflow: hidden;
     width: 90%;
     height: 90vh;
@@ -29,8 +30,8 @@ body,main {
     margin: auto;
     background-color: black;
     width: 100%;
-    border-radius: 15px;
-    border: 0px solid transparent;
+    border-radius: 1em;
+    border: 0em solid transparent;
     height: 100%;
     overflow: hidden;
     display: flex;
@@ -45,8 +46,8 @@ img {
 input[type="radio"] {
     margin: 0;
     padding: 0;
-    width: 20px;
-    height: 20px;
+    width: 1.25em;
+    height: 1.25em;
     cursor: pointer;
     appearance: none;
     display: grid;
@@ -72,21 +73,21 @@ input[type="radio"] {
 #switch1::before, #switch2::before, #switch3::before, #switch4::before {
     content: '';
     display: inline-block;
-    border: 5px solid #71abff;
+    border: 0.3125em solid #71abff;
     border-radius: 50%;
 }
 #switch1:checked::before, #switch2:checked::before, #switch3:checked::before, #switch4:checked::before {
-    width: 8px;
-    height: 8px;
-    border: 1px solid #71abff;
+    width: 0.5em;
+    height: 0.5em;
+    border: 0.0625em solid #71abff;
     border-radius: 50%;
 }
 #switch1:hover::before, #switch2:hover::before, #switch3:hover::before, #switch4:hover::before {
-    border: 5px solid white;
+    border: 0.3125em solid white;
     border-radius: 50%;
 }
 #switch1:checked:hover::before, #switch2:checked:hover::before, #switch3:checked:hover::before, #switch4:checked:hover::before {
-    border: 1px solid white;
+    border: 0.0625em solid white;
     border-radius: 50%;
 }
 .text {
@@ -119,7 +120,7 @@ input[type="radio"] {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    gap: 1px;
+    gap: 0.0625em;
 }
 @media (max-width: 895px) {
     body {
@@ -136,10 +137,10 @@ input[type="radio"] {
     }
     .slider {
         display: grid;
-        grid-template-columns: 1fr repeat(4, 20px) 1fr;
-        grid-template-rows: 90% 20px 1fr;
+        grid-template-columns: 1fr repeat(4, 1.25em) 1fr;
+        grid-template-rows: 90% 1.25em 1fr;
         grid-column-gap: 0px;
-        grid-row-gap: 20px; 
+        grid-row-gap: 1.25em; 
     }
     .images {
         grid-area: 1 / 1 / 2 / 7;
