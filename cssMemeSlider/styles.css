@@ -1,22 +1,25 @@
 body,main {
     background-color: #25282a;
     color: white;
+    scroll-behavior: smooth;
 }
 .slider {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+    display: grid; 
+    grid-template-columns: 75% 1fr 20px 20px 20px 20px;
+    grid-template-rows: 90% 20px 20px 1fr;
     overflow: hidden;
-    width: 90%;
+    width: 90vw;
+    height: 90vh;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 .images {
+    grid-row: 1;
+    grid-column: span 6;
     display: flex;
     flex-direction: row;
-    width: 100%;
     flex-wrap: nowrap;
 }
 .first, .second, .third, .fourth {
@@ -28,7 +31,7 @@ body,main {
     width: 100%;
     border-radius: 15px;
     border: 0px solid transparent;
-    height: 70vh;
+    height: 100%;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -36,13 +39,6 @@ body,main {
 img {
     margin: auto;
     height: 100%;
-}
-.inputs {
-    margin-right: 0;
-    align-self: flex-end;
-    display: flex;
-    flex-direction: row;
-    gap: 0;
 }
 input[type="radio"] {
     margin: 0;
@@ -53,6 +49,23 @@ input[type="radio"] {
     appearance: none;
     display: grid;
     place-content: center;
+    margin-right: 0;
+}
+#switch1 {
+    grid-row: 3;
+    grid-column: 3;
+}
+#switch2 {
+    grid-row: 3;
+    grid-column: 4;
+}
+#switch3 {
+    grid-row: 3;
+    grid-column: 5;
+}
+#switch4 {
+    grid-row: 3;
+    grid-column: 6;
 }
 #switch1::before, #switch2::before, #switch3::before, #switch4::before {
     content: '';
@@ -75,14 +88,23 @@ input[type="radio"] {
     border-radius: 50%;
 }
 .text {
-    margin-top: -45px;
+    grid-row: 3/4;
+    grid-column: 1;
     display: flex;
     flex-direction: row;
-    width:70%;
     overflow: hidden;
-    height: 30%;
 }
 .first-text, .second-text, .third-text, .fourth-text {
     min-width: 100%;
-    min-height: 100%;
+}
+#switch2 ~ .images {
+    animation: slide-next .5s;
+}
+@keyframes slide-next {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-80%);
+    }
 }
