@@ -1,0 +1,167 @@
+body,main {
+    background-color: #25282a;
+    color: white;
+    scroll-behavior: smooth;
+    overflow: hidden;
+}
+.container {
+    display: grid;
+    grid-template-columns: 5% 1fr 5%;
+    grid-template-rows: 5% 1fr 5%;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px; 
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+.slider {
+    grid-area: 2 / 2 / 3 / 3;
+    display: grid;
+    grid-template-columns: 75% 1fr repeat(4, 1.25em);
+    grid-template-rows: 80% repeat(2, 1.25em) 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px; 
+    overflow: hidden;
+}
+.images {
+    grid-area: 1 / 1 / 2 / 7;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.first, .second, .third, .fourth {
+    min-width: 100%;
+}
+.img-holder {
+    margin: auto;
+    background-color: black;
+    width: 100%;
+    border-radius: 1em;
+    border: 0em solid transparent;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+img {
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
+}
+input[type="radio"] {
+    margin: 0;
+    padding: 0;
+    width: 1.25em;
+    height: 1.25em;
+    cursor: pointer;
+    appearance: none;
+    display: grid;
+    place-content: center;
+    margin-right: 0;
+}
+#switch1, #custom1 {
+    grid-area: 3 / 3 / 4 / 4;
+}
+#switch2, #custom2 {
+    grid-area: 3 / 4 / 4 / 5;
+}
+#switch3, #custom3 {
+    grid-area: 3 / 5 / 4 / 6;
+}
+#switch4, #custom4 {
+    grid-area: 3 / 6 / 4 / 7; 
+}
+.custom {
+    display: inline-block;
+    border: 0.3125em solid #71abff;
+    border-radius: 50%;
+    place-self: center;
+    cursor: pointer;
+}
+#switch1:checked ~ #custom1, #switch2:checked ~ #custom2, #switch3:checked ~ #custom3, #switch4:checked ~ #custom4 {
+    width: 0.5em;
+    height: 0.5em;
+    border: 0.0625em solid #71abff;
+    border-radius: 50%;
+}
+#switch1:hover ~ #custom1, #switch2:hover ~ #custom2, #switch3:hover ~ #custom3, #switch4:hover ~ #custom4 {
+    border: 0.3125em solid white;
+    border-radius: 50%;
+}
+#switch1:checked:hover ~ #custom1, #switch2:checked:hover ~ #custom2, #switch3:checked:hover ~ #custom3, #switch4:checked:hover ~ #custom4 {
+    border: 0.0625em solid white;
+    border-radius: 50%;
+}
+.text {
+    grid-area: 3 / 1 / 5 / 2; 
+    overflow-x: hidden;
+}
+.first-text, .second-text, .third-text, .fourth-text {
+    min-width: 100%;
+}
+#switch1:checked ~ .images, #switch1:checked ~ .text > .text-container{
+    transform: translateX(0);
+    transition: .5s;
+
+}
+#switch2:checked ~ .images, #switch2:checked ~ .text > .text-container {
+    transform: translateX(-100%);
+    transition: .5s;
+}
+#switch3:checked ~ .images, #switch3:checked ~ .text > .text-container {
+    transform: translateX(-200%);
+    transition: .5s;
+}
+#switch4:checked ~ .images, #switch4:checked ~ .text > .text-container {
+    transform: translateX(-300%);
+    transition: .5s;
+}
+.text-container {
+    min-width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0.0625em;
+}
+@media (max-width: 895px) {
+    body {
+        background-color: white;
+        display: grid;
+        grid-template-columns: 5% 1fr 5%;
+        grid-template-rows: 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px; 
+    }
+    .container { 
+        background-color:#25282a;
+        grid-row: 1;
+        grid-column: 2;
+        width: 100%;
+    }
+    .slider {
+        display: grid;
+        grid-template-columns: 1fr repeat(4, 1.25em) 1fr;
+        grid-template-rows: 90% 1.25em 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 1.25em; 
+    }
+    .images {
+        grid-area: 1 / 1 / 2 / 7;
+    }
+    #switch1, #custom1 {
+        grid-area: 2 / 2 / 3 / 3;
+    }
+    #switch2, #custom2 {
+        grid-area: 2 / 3 / 3 / 4;
+    }
+    #switch3, #custom3 {
+        grid-area: 2 / 4 / 3 / 5;
+    }
+    #switch4, #custom4 {
+        grid-area: 2 / 5 / 3 / 6; 
+    }
+    .text {
+        grid-area: 3 / 1 / 4 / 7;
+    }
+}
